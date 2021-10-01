@@ -1254,12 +1254,14 @@ protected:
 //! @addtogroup imgproc_feature
 //! @{
 
+/** @example samples/cpp/lsd_lines.cpp
+An example using the LineSegmentDetector
+\image html building_lsd.png "Sample output image" width=434 height=300
+*/
+
 /** @brief Line segment detector class
 
 following the algorithm described at @cite Rafael12 .
-
-@note Implementation has been removed due original code license conflict
-
 */
 class CV_EXPORTS_W LineSegmentDetector : public Algorithm
 {
@@ -1314,6 +1316,7 @@ public:
 The LineSegmentDetector algorithm is defined using the standard values. Only advanced users may want
 to edit those, as to tailor it for their own application.
 
+<<<<<<< HEAD
 @param _refine The way found lines will be refined, see #LineSegmentDetectorModes
 @param _scale The scale of the image that will be used to find the lines. Range (0..1].
 @param _sigma_scale Sigma for Gaussian filter. It is computed as sigma = _sigma_scale/_scale.
@@ -1325,6 +1328,16 @@ is chosen.
 @param _n_bins Number of bins in pseudo-ordering of gradient modulus.
 
 @note Implementation has been removed due original code license conflict
+=======
+@param refine The way found lines will be refined, see #LineSegmentDetectorModes
+@param scale The scale of the image that will be used to find the lines. Range (0..1].
+@param sigma_scale Sigma for Gaussian filter. It is computed as sigma = sigma_scale/scale.
+@param quant Bound to the quantization error on the gradient norm.
+@param ang_th Gradient angle tolerance in degrees.
+@param log_eps Detection threshold: -log10(NFA) \> log_eps. Used only when advance refinement is chosen.
+@param density_th Minimal density of aligned region points in the enclosing rectangle.
+@param n_bins Number of bins in pseudo-ordering of gradient modulus.
+>>>>>>> 9b76872708 (restore LSD)
  */
 CV_EXPORTS_W Ptr<LineSegmentDetector> createLineSegmentDetector(
     int _refine = LSD_REFINE_STD, double _scale = 0.8,
